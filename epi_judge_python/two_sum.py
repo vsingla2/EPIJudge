@@ -4,8 +4,11 @@ from test_framework import generic_test
 
 
 def has_two_sum(A: List[int], t: int) -> bool:
-    # TODO - you fill in here.
-    return True
+    keys = set(A)  # O(n) space
+    for num in A:  # O(n) time
+        if t - num in keys:
+            return True
+    return False
 
 
 if __name__ == '__main__':
